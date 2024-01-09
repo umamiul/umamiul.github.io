@@ -2,7 +2,6 @@
 const CACHE_NAME_PREFIX = 'umami-';
 const urlsToCache = [
   '/',
-  '/index.html',
   '/styles.css',
   '/scripts.js',
   '/manifest.json',

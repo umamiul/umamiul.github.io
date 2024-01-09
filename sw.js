@@ -51,7 +51,7 @@ self.checkForUpdates = () => {
       if (currentVersion > getCacheName()) {
         self.registration.showNotification('Update Available', {
           body: 'A new version of the app is available. Click to refresh.',
-          icon: '/path/to/icon.png',
+          icon: '/umami.jpg',
         });
 
         self.addEventListener('notificationclick', (event) => {

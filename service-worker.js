@@ -1,6 +1,6 @@
 // service-worker.js
 var cacheName = 'umami';
-var currentCache = cacheName + '-v2';
+var currentCache = cacheName + '-v3';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(

@@ -12,5 +12,6 @@
       "sizes": "192x192",
       "type": "image/png"
     }
-  ]
+  ],
+  "version": "1.1" // Update the version number
 }

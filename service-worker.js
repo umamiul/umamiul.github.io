@@ -1,9 +1,7 @@
 // service-worker.js
+var cacheName = 'umami';
+var currentCache = cacheName + '-v1';
 
-var cacheName = 'your-cache-name';
-var currentCache = cacheName + '-v1'; // Change the version number when you update your site
-
-// Service worker registration
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(currentCache).then(function(cache) {
@@ -38,25 +36,6 @@ self.addEventListener('fetch', function(event) {
   );
 });
 
-self.addEventListener('message', function(event) {
-  if (event.data.action === 'skipWaiting') {
-    self.skipWaiting();
-  }
-});
-
-self.addEventListener('install', function(event) {
-  // Your existing installation code
-});
-
-self.addEventListener('activate', function(event) {
-  // Your existing activation code
-});
-
-self.addEventListener('fetch', function(event) {
-  // Your existing fetch code
-});
-
-// Update handling
 self.addEventListener('message', function(event) {
   if (event.data.action === 'reload') {
     self.skipWaiting();

@@ -1,11 +1,11 @@
 // sw.js
 const CACHE_NAME_PREFIX = 'umami-';
 const urlsToCache = [
+  '/',
   '/index.html',
   '/styles.css',
   '/scripts.js',
   '/manifest.json',
-  '/umami.jpg',
   // Add other static files here
 ];
 

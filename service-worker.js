@@ -1,7 +1,7 @@
 // service-worker.js
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    fetch('/path/to/manifest.json') // Fetch the manifest file
+    fetch('manifest.json') // Fetch the manifest file
       .then(response => response.json())
       .then(data => {
         var cacheName = 'umami';
@@ -12,7 +12,8 @@ self.addEventListener('install', function(event) {
             '/',
             'index.html',
             'styles.css',
-            'scripts.js'
+            'scripts.js',
+            'umami.jpg',
             // Add other assets you want to cache
           ]);
         });

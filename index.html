@@ -1647,10 +1647,13 @@
         refreshing = true;
       });
 
+      // Check for updates when the web app is opened
+      navigator.serviceWorker.controller.postMessage({ type: 'CHECK_FOR_UPDATES' });
+
       // Check for updates every 2 minutes
       setInterval(() => {
         navigator.serviceWorker.controller.postMessage({ type: 'CHECK_FOR_UPDATES' });
-      }, 2 * 60 * 1000); // Check for updates every 2 minutes
+      }, 2 * 60 * 1000);
     }
   </script>
 

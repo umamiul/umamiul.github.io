@@ -92,21 +92,6 @@
             </div>
             <div class="item-price">12.00&euro;</div>
         </div>
-        <!-- Item -->
-        <div class="menu-item">
-            <div class="item-details">
-                <div class="item-name">Pecurke u sosu/Kepurdha ne sos/Mushrooms in sauce</div>
-                <div class="item-description">Description for Item 1.</div>
-            </div>
-            <div class="item-price">6.00&euro;</div>
-        </div>
-<div class="menu-item">
-            <div class="item-details">
-                <div class="item-name">Pecurke u sosu/Kepurdha ne sos/Mushrooms in sauce</div>
-                <div class="item-description">Description for Item 1.</div>
-            </div>
-            <div class="item-price">6.00&euro;</div>
-        </div>
         <!-- Add more items as needed -->
     </div>
 
@@ -1644,7 +1629,36 @@
     <!-- Add more img tags for additional logos as needed -->
 </div>
 
-<script src="service-worker.js"></script>
+<script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(function(registration) {
+          registration.addEventListener('updatefound', function() {
+            var installingWorker = registration.installing;
+            installingWorker.onstatechange = function() {
+              if (installingWorker.state === 'installed') {
+                if (navigator.serviceWorker.controller) {
+                  // A new version is available
+                  // Display a prompt to the user
+                  if (confirm('A new version is available. Do you want to update?')) {
+                    // User chose to update
+                    // Perform actions like fetching new assets or updating the cache
+                    self.clients.matchAll().then(function(clients) {
+                      clients.forEach(function(client) {
+                        client.postMessage({ action: 'reload' });
+                      });
+                    });
+                  }
+                }
+              }
+            };
+          });
+        })
+        .catch(function(error) {
+          console.error('Service Worker registration failed:', error);
+        });
+    }
+  </script>
 
 </body>
 </html>

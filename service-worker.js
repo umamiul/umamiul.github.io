@@ -1,7 +1,9 @@
 // service-worker.js
-var cacheName = 'your-cache-name';
-var currentCache = cacheName + '-v' + manifest.version;
 
+var cacheName = 'your-cache-name';
+var currentCache = cacheName + '-v1'; // Change the version number when you update your site
+
+// Service worker registration
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(currentCache).then(function(cache) {
@@ -36,32 +38,33 @@ self.addEventListener('fetch', function(event) {
   );
 });
 
-// Inside the service-worker.js file
 self.addEventListener('message', function(event) {
   if (event.data.action === 'skipWaiting') {
     self.skipWaiting();
   }
 });
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/path/to/service-worker.js')
-    .then(function(registration) {
-      registration.addEventListener('updatefound', function() {
-        var installingWorker = registration.installing;
-        installingWorker.onstatechange = function() {
-          if (installingWorker.state === 'installed') {
-            if (navigator.serviceWorker.controller) {
-              // A new version is available
-              // Prompt the user to reload the page
-              // This can be a custom prompt or a simple page refresh
-              // For example:
-              window.location.reload(true);
-            }
-          }
-        };
+self.addEventListener('install', function(event) {
+  // Your existing installation code
+});
+
+self.addEventListener('activate', function(event) {
+  // Your existing activation code
+});
+
+self.addEventListener('fetch', function(event) {
+  // Your existing fetch code
+});
+
+// Update handling
+self.addEventListener('message', function(event) {
+  if (event.data.action === 'reload') {
+    self.skipWaiting();
+    self.clients.claim();
+    self.clients.matchAll().then(function(clients) {
+      clients.forEach(function(client) {
+        client.postMessage({ action: 'reload' });
       });
-    })
-    .catch(function(error) {
-      console.error('Service Worker registration failed:', error);
     });
-}
+  }
+});

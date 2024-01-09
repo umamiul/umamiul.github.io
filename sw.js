@@ -1,5 +1,5 @@
 // sw.js
-const CACHE_NAME_PREFIX = 'umami';
+const CACHE_NAME_PREFIX = 'umami-';
 const urlsToCache = [
   '/',
   '/index.html',

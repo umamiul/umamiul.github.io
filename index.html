@@ -1630,32 +1630,5 @@
     <!-- Add more img tags for additional logos as needed -->
 </div>
 
-<script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
-        .then((registration) => {
-          console.log('Service Worker registered with scope:', registration.scope);
-        })
-        .catch((error) => {
-          console.error('Service Worker registration failed:', error);
-        });
-
-      let refreshing;
-      navigator.serviceWorker.addEventListener('controllerchange', () => {
-        if (refreshing) return;
-        window.location.reload();
-        refreshing = true;
-      });
-
-      // Check for updates when the web app is opened
-      navigator.serviceWorker.controller.postMessage({ type: 'CHECK_FOR_UPDATES' });
-
-      // Check for updates every 2 minutes
-      setInterval(() => {
-        navigator.serviceWorker.controller.postMessage({ type: 'CHECK_FOR_UPDATES' });
-      }, 2 * 60 * 1000);
-    }
-  </script>
-
 </body>
 </html>

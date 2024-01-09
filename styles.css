@@ -1,0 +1,240 @@
+body {
+  font-family: 'Poppins';
+  background-color: #1c1c1c;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+}
+
+.logo-container {
+  text-align: center;
+  padding: 10px;
+  margin-top: 5px;
+  background-color: #1c1c1c;
+}
+
+.logo-container img {
+  width: 300px;
+  height: auto;
+}
+
+.navbar {
+  background-color: #b90000;
+  text-align: center;
+}
+
+.navbar a {
+  display: inline-block;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+    display: flex;
+    position: static;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  cursor: pointer;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: #8d0000;
+  box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: #ff0000;
+}
+
+#menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.menu-category {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  background-color: #1c1c1c;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+h2 {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  color: #ff0000;
+  margin-top: 0;
+  text-transform: uppercase;
+  overflow-wrap: normal;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.item-details {
+  flex: 2;
+}
+
+.item-name {
+  color: #fff;
+}
+
+.item-description {
+  color: #ccc;
+  font-size: 12px;
+  font-style: italic;
+  display: none;
+}
+
+.item-price {
+  flex: 0.5;
+  text-align: right;
+  color: #ff1900;
+  font-family: 'Poppins';
+  font-weight: 500;
+}
+
+p {
+  font-size: 14px;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 768px) {
+  .menu-category {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  h2 {
+    white-space: normal;
+    font-size: 18px;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .navbar a,
+  .dropdown .dropbtn {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .menu-category {
+    width: 100%;
+  }
+
+  h2 {
+    white-space: normal;
+    font-size: 18px;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar a,
+  .dropdown .dropbtn {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .menu-category {
+    width: 100%;
+  }
+
+  h2 {
+    white-space: normal;
+    font-size: 18px;
+    overflow-wrap: anywhere;
+  }
+}
+
+.spacer {
+  width: 100%;
+  background-color: #b90000;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.spacer > * {
+  margin: 0;
+}
+
+h3 {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  margin-top: 0;
+  text-transform: uppercase;
+  overflow-wrap: normal;
+}
+
+.separator {
+  width: 100%;
+  height: 1.5px; /* Set the desired height of the separator */
+  background-color: #640000; /* Set the color of the separator */
+  margin: 0; /* Set the margin to control the spacing around the separator */
+}
+
+.ml-left {
+  flex: 0; /* Adjust the flex value as needed */
+  color: #fff;
+}
+
+.sticky-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    height: 40px; /* Adjusted height */
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px; /* Adjusted padding */
+    z-index: 1002;
+}
+
+.sticky-bar img {
+    max-height: 70%; /* Ensure the logo doesn't exceed the height of the sticky bar */
+    max-width: 70%; /* Ensure the logo doesn't exceed the width of the sticky bar */
+    filter: brightness(0) invert(1);
+    opacity: 20%;
+}
+
+

@@ -1,13 +1,15 @@
 // service-worker.js
 var cacheName = 'umami';
-var currentCache = cacheName + '-v4';
+var currentCache = cacheName + '-v1';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(currentCache).then(function(cache) {
       return cache.addAll([
         '/',
-        '/path/to/your/assets',
+        '/index.html',
+        '/styles.css',
+        '/scripts.js',
         // Add other assets you want to cache
       ]);
     })

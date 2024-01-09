@@ -1630,5 +1630,40 @@
     <!-- Add more img tags for additional logos as needed -->
 </div>
 
+<script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then((registration) => {
+          console.log('Service Worker registered with scope:', registration.scope);
+
+          // Check for updates when the web app is opened
+          registration.addEventListener('updatefound', () => {
+            const installingWorker = registration.installing;
+            if (installingWorker) {
+              installingWorker.addEventListener('statechange', () => {
+                if (installingWorker.state === 'installed') {
+                  // A new service worker is waiting to activate
+                  // Send a message to the new service worker to check for updates
+                  navigator.serviceWorker.controller.postMessage({
+                    type: 'CHECK_FOR_UPDATES'
+                  });
+                }
+              });
+            }
+          });
+
+          // Ensure the page is controlled by the service worker immediately
+          if (navigator.serviceWorker.controller) {
+            navigator.serviceWorker.controller.postMessage({
+              type: 'CHECK_FOR_UPDATES'
+            });
+          }
+        })
+        .catch((error) => {
+          console.error('Service Worker registration failed:', error);
+        });
+    }
+  </script>
+
 </body>
 </html>

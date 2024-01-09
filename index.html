@@ -1631,35 +1631,34 @@
 
 <script src="service-worker.js"></script>
 <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(function(registration) {
-          registration.addEventListener('updatefound', function() {
-            var installingWorker = registration.installing;
-            installingWorker.onstatechange = function() {
-              if (installingWorker.state === 'installed') {
-                if (navigator.serviceWorker.controller) {
-                  // A new version is available
-                  // Display a prompt to the user
-                  if (confirm('A new version is available. Do you want to update?')) {
-                    // User chose to update
-                    // Perform actions like fetching new assets or updating the cache
-                    self.clients.matchAll().then(function(clients) {
-                      clients.forEach(function(client) {
-                        client.postMessage({ action: 'reload' });
-                      });
-                    });
-                  }
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(function(registration) {
+        registration.addEventListener('updatefound', function() {
+          var installingWorker = registration.installing;
+          installingWorker.onstatechange = function() {
+            if (installingWorker.state === 'installed') {
+              if (navigator.serviceWorker.controller) {
+                // A new version is available
+                // Display a prompt to the user
+                if (confirm('A new version is available. Do you want to update?')) {
+                  // User chose to update
+                  // Perform actions like fetching new assets or updating the cache
+                  navigator.serviceWorker.controller.postMessage({ action: 'reload' });
+
+                  // Close the registration window
+                  registration.update();
                 }
               }
-            };
-          });
-        })
-        .catch(function(error) {
-          console.error('Service Worker registration failed:', error);
+            }
+          };
         });
-    }
-  </script>
+      })
+      .catch(function(error) {
+        console.error('Service Worker registration failed:', error);
+      });
+  }
+</script>
 
 </body>
 </html>

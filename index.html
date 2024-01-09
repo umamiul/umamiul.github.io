@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="styles.css">
   <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="/img/icons/icon-96x96.png">
 </head>
 <body>
   <header>
@@ -1630,41 +1631,26 @@
 </div>
 
 <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
-      .then(function(registration) {
-        registration.addEventListener('updatefound', function() {
-          var installingWorker = registration.installing;
-          installingWorker.onstatechange = function() {
-            if (installingWorker.state === 'installed') {
-              if (navigator.serviceWorker.controller) {
-                // A new version is available
-                // Display a prompt to the user
-                if (confirm('Azuriranje Aplikacije. Potvrdi')) {
-                  // User chose to update
-                  // Perform actions like fetching new assets or updating the cache
-                  navigator.serviceWorker.controller.postMessage({ action: 'reload' });
-
-                  // Close the registration window
-                  registration.update();
-                }
-              }
-            }
-          };
-        });
-      })
-      .catch(function(error) {
-        console.error('Service Worker registration failed:', error);
-      });
-  }
-</script>
-<script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.addEventListener('message', function(event) {
-        if (event.data.action === 'reload') {
-          window.location.reload(true);
-        }
+      navigator.serviceWorker.register('/sw.js')
+        .then((registration) => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch((error) => {
+          console.error('Service Worker registration failed:', error);
+        });
+
+      let refreshing;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (refreshing) return;
+        window.location.reload();
+        refreshing = true;
       });
+
+      // Check for updates every 2 minutes
+      setInterval(() => {
+        navigator.serviceWorker.controller.postMessage({ type: 'CHECK_FOR_UPDATES' });
+      }, 2 * 60 * 1000); // Check for updates every 2 minutes
     }
   </script>
 

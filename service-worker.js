@@ -1,8 +1,4 @@
 // service-worker.js
-var cacheName = 'umami';
-var currentCache = cacheName + '-v1';
-
-// service-worker.js
 self.addEventListener('install', function(event) {
   event.waitUntil(
     fetch('/path/to/manifest.json') // Fetch the manifest file
@@ -14,7 +10,9 @@ self.addEventListener('install', function(event) {
         return caches.open(currentCache).then(function(cache) {
           return cache.addAll([
             '/',
-            '/path/to/your/assets',
+            'index.html',
+            'styles.css',
+            'scripts.js'
             // Add other assets you want to cache
           ]);
         });

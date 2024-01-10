@@ -1,9 +1,12 @@
 // service-worker.js
 
-const CACHE_NAME = 'umami-v2';
+const CACHE_NAME = 'umami-v3';
 const urlsToCache = [
   '/',
   '/index.html',
+  '/styles.css',
+  '/scripts.js',
+  '/umami.jpg',
   // Add other static assets you want to cache
 ];
 

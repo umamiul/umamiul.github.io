@@ -1,47 +1,26 @@
-const staticCacheName = 'umami-v2';
-const dynamicCacheName = 'umami-dynamic-v2';
-const assets = [
-  './',
-  './index.html',
-  './styles.css',
-  './scripts.js',
-  './app.js',
-  './manifest.json',
-  './umami.jpg',
-  './umamipng.png',
-];
+const dynamicCacheName = 'umami-dynamic-v1';
 
 self.addEventListener('install', evt => {
-  evt.waitUntil(
-    caches.open(staticCacheName).then(cache => {
-      console.log('Caching shell assets');
-      cache.addAll(assets);
-    })
-  );
+  // No need to cache static assets during installation
 });
 
 self.addEventListener('activate', evt => {
-    evt.waitUntil(
-      caches.keys().then(keys => {
-        return Promise.all(keys
-          .filter(key => key !== staticCacheName && key !== dynamicCacheName)
-          .map(key => caches.delete(key))
-        );
-      })
-      .then(() => self.clients.claim()) // Claim clients immediately
-    );
-  });
+  evt.waitUntil(
+    caches.keys().then(keys => {
+      return Promise.all(keys
+        .filter(key => key !== dynamicCacheName)
+        .map(key => caches.delete(key))
+      );
+    })
+    .then(() => self.clients.claim()) // Claim clients immediately
+  );
+});
 
 self.addEventListener('fetch', evt => {
   const request = evt.request;
 
-  // Serve static assets from cache
-  if (assets.includes(request.url)) {
-    evt.respondWith(caches.match(request));
-  } else {
-    // Fetch and update dynamic content
-    evt.respondWith(fetchAndUpdate(request));
-  }
+  // Fetch and update dynamic content
+  evt.respondWith(fetchAndUpdate(request));
 });
 
 function fetchAndUpdate(request) {

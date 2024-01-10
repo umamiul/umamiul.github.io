@@ -250,6 +250,12 @@ h3 {
   transition: opacity 1s ease-in-out; /* Add a smooth fade-out transition */
 }
 
+#splash-screen img {
+  width: 148px; /* Set the desired width */
+  height: 48px; /* Set the desired height */
+  /* Add other styles as needed */
+}
+
 #website-content {
   opacity: 0;
   transition: opacity 1s ease-in-out; /* Add a smooth fade-in transition for the website content */

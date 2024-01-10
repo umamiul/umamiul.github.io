@@ -1,4 +1,4 @@
-const dynamicCacheName = 'umami-dynamic-v3';
+const dynamicCacheName = 'umami-dynamic-v1';
 
 self.addEventListener('install', evt => {
   // No need to cache static assets during installation

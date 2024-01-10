@@ -247,7 +247,7 @@ h3 {
   justify-content: center;
   align-items: center;
   opacity: 1;
-  transition: opacity 0.2s ease-in-out; /* Add a smooth fade-out transition */
+  transition: opacity 0.1s ease-in-out; /* Add a smooth fade-out transition */
 }
 
 #splash-screen img {
@@ -258,7 +258,7 @@ h3 {
 
 #website-content {
   opacity: 0;
-  transition: opacity 0.2s ease-in-out; /* Add a smooth fade-in transition for the website content */
+  transition: opacity 0.1s ease-in-out; /* Add a smooth fade-in transition for the website content */
 }
 
 body.loaded #splash-screen {

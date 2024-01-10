@@ -21,19 +21,17 @@ self.addEventListener('install', evt => {
   );
 });
 
-// activate event
 self.addEventListener('activate', evt => {
-  //console.log('service worker activated');
-  evt.waitUntil(
-    caches.keys().then(keys => {
-      //console.log(keys);
-      return Promise.all(keys
-        .filter(key => key !== staticCacheName)
-        .map(key => caches.delete(key))
-      );
-    })
-  );
-});
+    evt.waitUntil(
+      caches.keys().then(keys => {
+        return Promise.all(keys
+          .filter(key => key !== staticCacheName)
+          .map(key => caches.delete(key))
+        );
+      })
+      .then(() => self.skipWaiting()) // Add this line
+    );
+  });
 
 // fetch event
 self.addEventListener('fetch', evt => {

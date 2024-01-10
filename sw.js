@@ -1,4 +1,4 @@
-const staticCacheName = 'umami-v4';
+const staticCacheName = 'umami-v1';
 const assets = [
   '/',
   '/index.html',

@@ -6,6 +6,7 @@
   "display": "standalone",
   "background_color": "#1c1c1c",
   "theme_color": "#1c1c1c",
+  "splash_screen": "/umami.jpg",
   "icons": [
     {
       "src": "/umami.jpg",

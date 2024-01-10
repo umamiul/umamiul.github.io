@@ -236,4 +236,25 @@ h3 {
     opacity: 20%;
 }
 
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1c1c1c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Add other styles as needed */
+}
+
+body.loading #splash-screen {
+  display: flex;
+}
+
+body:not(.loading) #splash-screen {
+  display: none;
+}
+
 

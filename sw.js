@@ -2,11 +2,8 @@
 
 const CACHE_NAME = 'umami-v1';
 const urlsToCache = [
+  '/',
   '/index.html',
-  '/scripts.js',
-  '/styles.css',
-  '/umami.jpg',
-  '/manifest.json'
   // Add other static assets you want to cache
 ];
 
@@ -14,6 +11,7 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => cache.addAll(urlsToCache))
+      .then(() => self.skipWaiting())
   );
 });
 

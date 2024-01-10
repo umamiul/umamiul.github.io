@@ -21,15 +21,16 @@ self.addEventListener('install', evt => {
 });
 
 self.addEventListener('activate', evt => {
-  evt.waitUntil(
-    caches.keys().then(keys => {
-      return Promise.all(keys
-        .filter(key => key !== staticCacheName && key !== dynamicCacheName)
-        .map(key => caches.delete(key))
-      );
-    })
-  );
-});
+    evt.waitUntil(
+      caches.keys().then(keys => {
+        return Promise.all(keys
+          .filter(key => key !== staticCacheName && key !== dynamicCacheName)
+          .map(key => caches.delete(key))
+        );
+      })
+      .then(() => self.clients.claim()) // Claim clients immediately
+    );
+  });
 
 self.addEventListener('fetch', evt => {
   const request = evt.request;

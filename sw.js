@@ -1,13 +1,13 @@
-const staticCacheName = 'umami-v2';
+const staticCacheName = 'umami-v3';
 const assets = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  'scripts.js',
-  '/app.js',
-  '/manifest.json',
-  '/umami.jpg',
-  '/umamipng.png',
+  './',
+  './index.html',
+  './styles.css',
+  './scripts.js',
+  './app.js',
+  './manifest.json',
+  './umami.jpg',
+  './umamipng.png',
 ];
 
 // install event

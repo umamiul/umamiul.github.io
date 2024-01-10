@@ -242,19 +242,26 @@ h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #1c1c1c;
+  background-color: #ffffff; /* Color specified in manifest.json or any styling you want */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Add other styles as needed */
+  opacity: 1;
+  transition: opacity 1s ease-in-out; /* Add a smooth fade-out transition */
 }
 
-body.loading #splash-screen {
-  display: flex;
+#website-content {
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Add a smooth fade-in transition for the website content */
 }
 
-body:not(.loading) #splash-screen {
-  display: none;
+body.loaded #splash-screen {
+  opacity: 0;
+  pointer-events: none; /* Make sure users cannot interact with the splash screen during the fade-out */
+}
+
+body.loaded #website-content {
+  opacity: 1;
 }
 
 

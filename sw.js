@@ -1,5 +1,5 @@
-const staticCacheName = 'umami-v2';
-const dynamicCacheName = 'umami-dynamic-v1';
+const staticCacheName = 'umami-v3';
+const dynamicCacheName = 'umami-dynamic-v2';
 const assets = [
   './',
   './index.html',

@@ -1,20 +1,30 @@
-const dynamicCacheName = 'umami-dynamic-v1';
+const dynamicCacheName = 'umami-dynamic-v2';
 
 self.addEventListener('install', evt => {
   // No need to cache static assets during installation
 });
 
 self.addEventListener('activate', evt => {
-  evt.waitUntil(
-    caches.keys().then(keys => {
-      return Promise.all(keys
-        .filter(key => key !== dynamicCacheName)
-        .map(key => caches.delete(key))
-      );
-    })
-    .then(() => self.clients.claim()) // Claim clients immediately
-  );
-});
+    evt.waitUntil(
+      caches.keys().then(keys => {
+        return Promise.all(keys
+          .filter(key => key !== dynamicCacheName)
+          .map(key => caches.delete(key))
+        );
+      })
+      .then(() => self.clients.matchAll())
+      .then(clients => {
+        return Promise.all(
+          clients.map(client => {
+            if (client.url && 'navigate' in client) {
+              return client.navigate(client.url);
+            }
+          })
+        );
+      })
+      .then(() => self.clients.claim())
+    );
+  });
 
 self.addEventListener('fetch', evt => {
   const request = evt.request;

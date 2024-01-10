@@ -270,4 +270,20 @@ body.loaded #website-content {
   opacity: 1;
 }
 
+/* Hide splash screen on desktop view */
+@media (min-width: 768px) {
+  #splash-screen {
+      display: none;
+  }
+}
+
+body.loaded #splash-screen {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.loaded #website-content {
+  opacity: 1;
+}
+
 

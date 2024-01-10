@@ -1,14 +1,6 @@
-// service-worker.js
+// sw.js
 
-const CACHE_NAME = 'umami-v3';
-const urlsToCache = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/scripts.js',
-  '/umami.jpg',
-  // Add other static assets you want to cache
-];
+const CACHE_NAME = 'umami-v4';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -31,13 +23,23 @@ self.addEventListener('activate', (event) => {
     })
   );
 
-  // Ensure that the new Service Worker is activated immediately
   return self.clients.claim();
 });
 
 self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request)
-      .then((response) => response || fetch(event.request))
-  );
+  if (event.request.url.includes('/index.html')) {
+    event.respondWith(
+      caches.match(event.request, { ignoreSearch: true })
+        .then((response) => {
+          return response || fetch(event.request);
+        })
+    );
+  } else {
+    event.respondWith(
+      caches.match(event.request)
+        .then((response) => {
+          return response || fetch(event.request);
+        })
+    );
+  }
 });

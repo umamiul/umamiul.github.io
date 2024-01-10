@@ -1630,5 +1630,22 @@
     <!-- Add more img tags for additional logos as needed -->
 </div>
 
+<script>
+    // Function to check for updates and reload if necessary
+    function checkForUpdates() {
+        var currentVersion = '1.0';
+        var storedVersion = localStorage.getItem('appVersion');
+        
+        if (storedVersion !== currentVersion) {
+            localStorage.setItem('appVersion', currentVersion);
+            alert('A new version is available. Reloading...');
+            location.reload(true); // Force reload from server
+        }
+    }
+
+    // Add an event listener to check for updates when the page is opened
+    window.addEventListener('load', checkForUpdates);
+</script>
+
 </body>
 </html>

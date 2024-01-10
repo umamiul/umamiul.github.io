@@ -13,11 +13,5 @@
       "type": "image/png"
     }
   ],
-  "splash_screen": {
-    "enabled": true,
-    "image": "/umami.jpg",
-    "background_color": "#1c1c1c",
-    "icon": "/umami.jpg",
-    "rotate": true
-  }
+  "version": "1"
 }

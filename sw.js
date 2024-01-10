@@ -41,12 +41,10 @@ self.addEventListener('install', evt => {
   
   function fetchAndUpdate(request) {
     return fetch(request).then(res => {
-      // Check if the response is valid
       if (!res || res.status !== 200 || res.type !== 'basic') {
         return res;
       }
   
-      // Clone the response to avoid consuming it
       const clonedResponse = res.clone();
   
       // Update dynamic cache with the latest response
@@ -56,7 +54,6 @@ self.addEventListener('install', evt => {
   
       return res;
     }).catch(err => {
-      // Handle fetch errors (e.g., no network connection)
       console.error('Fetch error:', err);
     });
   }

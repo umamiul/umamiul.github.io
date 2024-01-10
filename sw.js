@@ -1,9 +1,19 @@
-const staticCacheName = 'umami-v1';
+const staticCacheName = 'umami-v2';
 const dynamicCacheName = 'umami-dynamic-v1';
+const assets = [
+  './',
+  './index.html',
+  './styles.css',
+  './scripts.js',
+  './app.js',
+  './manifest.json',
+  './umami.jpg',
+  './umamipng.png',
+];
 
 self.addEventListener('install', evt => {
   evt.waitUntil(
-    caches.open(staticCacheName).then((cache) => {
+    caches.open(staticCacheName).then(cache => {
       console.log('Caching shell assets');
       cache.addAll(assets);
     })
@@ -22,11 +32,15 @@ self.addEventListener('activate', evt => {
 });
 
 self.addEventListener('fetch', evt => {
-  evt.respondWith(
-    caches.match(evt.request).then(cacheRes => {
-      return cacheRes || fetchAndUpdate(evt.request);
-    })
-  );
+  const request = evt.request;
+
+  // Serve static assets from cache
+  if (assets.includes(request.url)) {
+    evt.respondWith(caches.match(request));
+  } else {
+    // Fetch and update dynamic content
+    evt.respondWith(fetchAndUpdate(request));
+  }
 });
 
 function fetchAndUpdate(request) {

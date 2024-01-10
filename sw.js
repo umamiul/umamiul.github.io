@@ -1,6 +1,6 @@
 // service-worker.js
 
-const CACHE_NAME = 'umami-v1';
+const CACHE_NAME = 'umami-v2';
 const urlsToCache = [
   '/',
   '/index.html',

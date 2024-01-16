@@ -1,0 +1,30 @@
+<!-- Category 1: Predjelo -->
+    <div class="menu-category full-width" id="predjelo">
+        <h2><img src="/categoryicons/appetizer_9660489.png">Predjelo/Paragjelle/Appetizer</h2>
+        <!-- Item -->
+        <div class="menu-item">
+            <div class="accordian">
+                <input type="checkbox" id="trigger"/>
+                <label for="trigger">Miks Sireva/Mix djatherash/Cheese mix</label>
+                <div>Description for Item 3.<img src="umami.jpg"alt="beef tataki" loading="lazy" ></div>
+              </div>
+            <div class="item-price">11.00&euro;</div>
+        </div>
+        <!-- Item 2 -->
+        <div class="menu-item">
+            <div class="accordian">
+                <input type="checkbox" id="trigger2"/>
+                <label for="trigger2">Grilovano povrce/Perime te skuqura/Fried Vegetables</label>
+                <div>Description for Item 3.<img src="umami.jpg"alt="beef tataki" loading="lazy" ></div>
+              </div>
+            <div class="item-price">6.00&euro;</div>
+        </div>
+        <!-- Item -->
+        <div class="menu-item">
+            <div class="accordian">
+                <input type="checkbox" id="trigger3"/>
+                <label for="trigger3">Beef Tataki</label>
+                <div>Description for Item 3.<img src="umami.jpg"alt="beef tataki" loading="lazy" ></div>
+              </div>
+            <div class="item-price">12.00&euro;</div>
+        </div>

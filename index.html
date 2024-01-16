@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1c1c1c">
+    <meta http-equiv="cache-control" content="max-age=0, no-cache, no-store, must-revalidate">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+   <link rel="stylesheet" href="/styles.css">
+   <link rel="stylesheet" href="/itemdropdown.css">
+   <link rel="manifest" href="/manifest.json">
+   <link rel="import" href="menu.html">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   <link rel="apple-touch-icon" href="/icons/icon-512x512.png">
+   <title>UMAMI Menu</title>
+</head>
+<body>
+  <div id="splash-screen">
+    <img id="logo" src="umami.svg" alt="Logo" loading="lazy">
+</div>
+  <header>
+<div id="website-content">
+<!-- Logo -->
+  <div class="logo-container">
+  <a href="#" id="logo-link">
+  <img src="umami.svg" alt="Logo" class="custom-logo" loading="lazy">
+  </a>
+</div>
+
+  <div class="navbar">
+    <div class="dropdown">
+      <button class="dropbtn">FOOD 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#predjelo">Predjelo/Paragjelle/Appetizer</a>
+        <a href="#salata">Salate/Sallata/Salads</a>
+        <a href="#supe">supe/supa/soups</a>
+        <a href="#pasta">pasta</a>
+        <a href="#rizoto">rizoto/rizhoto/risotto</a>
+        <a href="#meso">meso/mish/meat</a>
+        <a href="#pizza">pizza</a>
+        <a href="#fast-food">fast-food</a>
+        <a href="#dorucak">dorucak/mengjesi/breakfast</a>
+        <a href="#meze">meze</a>
+      </div>
+    </div>
+    <div class="separator"></div> 
+    <div class="dropdown">
+      <button class="dropbtn">DRINKS 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#hot-drinks">Hot Drinks</a>
+        <a href="#non-alc">NON ALCOHOLIC DRINKS</a>
+        <a href="#fresh-juice">fresh juices</a>
+        <a href="#smoothie">smoothie</a>
+        <a href="#thomas-henry">thomas henry</a>
+        <a href="#beer">beer</a>
+        <a href="#draft-beer">draft beer</a>
+        <a href="#vodka">vodka</a>
+        <a href="#gin">gin</a>
+        <a href="#cider">cider</a>
+        <a href="#white-wines">white wines</a>
+        <a href="#rose">rose</a>
+        <a href="#champagne">champagne prosecco</a>
+        <a href="#liqueurs">liqueurs</a>
+        <a href="#brandy">brandy</a>
+        <a href="#cognac">cognac</a>
+        <a href="#tequila">tequila</a>
+        <a href="#rum">rum</a>
+        <a href="#whiskey">whiskey</a>
+      </div>
+    </div> 
+  </div>
+  </header>
+
+  
+  <div id="menu-container"></div>
+
+  </div>
+  <footer class="sticky-footer">
+    <div class="sticky-bar2" id="sticky-bar">
+      <!-- Your sticky bar content goes here -->
+      <h4>Sponsored by</h4>
+      <!-- Add more img tags for additional logos as needed -->
+    </div>
+    <div class="sticky-bar" id="sticky-bar">
+      <!-- Your sticky bar content goes here -->
+      <img src="cocacola.png" alt="Coca-Cola Logo" loading="lazy">
+      <!-- Add more img tags for additional logos as needed -->
+    </div>
+  </footer>
+
+  <allrights>UMAMI 2024 © All right reserved.</allrights>
+
+  <div id="custom-modal">
+    <div id="custom-modal-content">
+      <img src="icons\icon-96x96.png">
+      <p>A new version is available. Refresh the page</p>
+      <button id="refresh-button">Refresh/Rifresko/Azuriraj</button>
+    </div>
+  </div>
+
+
+<script src="/scripts.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/app.js"></script>
+
+</body>
+</html>

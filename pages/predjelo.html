@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1c1c1c">
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-96x96.png">
+    <link rel="stylesheet" href="/predjela.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #1c1c1c;
+        }
+
+        #image-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #1c1c1c;
+        }
+
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .photo {
+            overflow: hidden;
+            border-radius: 8px;
+            flex: 1 0 calc(33.33% - 16px); /* Adjust the width based on your preference */
+        }
+
+        .photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <title>Slike</title>
+</head>
+<body>
+    <div id="splash-screen">
+        <img src="/umamipng.png" alt="Splash Screen">
+    </div>
+    <header>
+<div id="website-content">
+            <!-- Logo -->
+            <div class="logo-container">
+                <a href="#" id="logo-link">
+                    <img src="https://i.ibb.co/3YwgTty/ss.png" alt="Logo" class="custom-logo">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="grid hidden">
+        <ul id="hexGrid">
+          <li class="hex">
+            <div class="hexIn">
+              <a class="hexLink" href="#">
+                <div class='img' style='background-image:url(https://images.unsplash.com/photo-1417436026361-a033044d901f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;w=1080&amp;fit=max&amp;s=faa4e192f33e0d6b7ce0e54f15140e42);'></div>
+                <h1 id="demo1">This is a title</h1>
+                <p id="demo2">Some sample text about the article this hexagon leads to</p>
+              </a>
+            </div>
+          </li>
+            
+          <li class="hex">
+            <div class="hexIn">
+              <a class="hexLink" href="#">
+                    <div class='img' style='background-image: url(https://images.unsplash.com/44/MIbCzcvxQdahamZSNQ26_12082014-IMG_3526.jpg?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;w=1080&amp;fit=max&amp;s=49dab7a5e4b2e28b5707bc2db974c94b);'></div>
+                <h1 id="demo1">This is a title</h1>
+                <p id="demo2">Some sample text about the article this hexagon leads to</p>
+              </a>
+            </div>
+          </li>
+          <li class="hex">
+            <div class="hexIn">
+              <a class="hexLink" href="#">
+                <div class='img' style='background-image: url(https://images.unsplash.com/photo-1425668273332-3a46ab26b161?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;w=1080&amp;fit=max&amp;s=d453ab3dec298c43415526458b360fa6);'></div>
+                <h1 id="demo1">This is a title</h1>
+                <p id="demo2">Some sample text about the article this hexagon leads to</p>
+              </a>
+            </div>
+          </li>
+          <li class="hex">
+            <div class="hexIn">
+              <a class="hexLink" href="#">
+                <div class='img' style='background-image: url(https://images.unsplash.com/photo-1423145369430-a9ea0de096cd?crop=entropy&amp;fit=crop&amp;fm=jpg&amp;h=1375&amp;ixjsv=2.1.0&amp;ixlib=rb-0.3.5&amp;q=80&amp;w=1725);'></div>
+                <h1 id="demo1">This is a title</h1>
+                <p id="demo2">Some sample text about the article this hexagon leads to</p>
+              </a>
+            </div>
+          </li>
+          <li class="hex">
+            <div class="hexIn">
+              <a class="hexLink" href="#">
+                <div class='img' style='background-image: url(https://images.unsplash.com/photo-1432887382605-0abf9cc49e8f?crop=entropy&amp;fit=crop&amp;fm=jpg&amp;h=1375&amp;ixjsv=2.1.0&amp;ixlib=rb-0.3.5&amp;q=80&amp;w=1725);'></div>
+                <h1 id="demo1">This is a title</h1>
+                <p id="demo2">Some sample text about the article this hexagon leads to</p>
+              </a>
+            </div>
+          </li>
+          <li class="hex">
+            <div class="hexIn">
+              <a class="hexLink" href="#">
+             <div class='img' style='background-image: url(https://images.unsplash.com/uploads/14122811862445bc266cf/931448f2?crop=entropy&amp;fit=crop&amp;fm=jpg&amp;h=1375&amp;ixjsv=2.1.0&amp;ixlib=rb-0.3.5&amp;q=80&amp;w=1725);'></div>
+                <h1 id="demo1">This is a title</h1>
+                <p id="demo2">Some sample text about the article this hexagon leads to</p>
+              </a>
+            </div>
+          </li>
+          <li class="hex">
+            <div class="hexIn">
+              <a class="hexLink" href="#">
+                <div class='img' style='background-image: url(https://images.unsplash.com/photo-1417026846249-f31f7e43fc35?crop=entropy&amp;fit=crop&amp;fm=jpg&amp;h=1375&amp;ixjsv=2.1.0&amp;ixlib=rb-0.3.5&amp;q=80&amp;w=1725);'></div>
+                <h1 id="demo1">This is a title</h1>
+                <p id="demo2">Some sample text about the article this hexagon leads to</p>
+              </a>
+            </div>
+          </li>
+          <li class="hex">
+            <div class="hexIn">
+              <a class="hexLink" href="#">
+                <div class='img' style='background-image: url(https://images.unsplash.com/uploads/14122811862445bc266cf/931448f2?crop=entropy&amp;fit=crop&amp;fm=jpg&amp;h=1375&amp;ixjsv=2.1.0&amp;ixlib=rb-0.3.5&amp;q=80&amp;w=1725);'></div>
+                <h1 id="demo1">This is a title</h1>
+                <p id="demo2">Some sample text about the article this hexagon leads to</p>
+              </a>
+            </div>
+          </li>
+          <li class="hex">
+            <div class="hexIn">
+              <a class="hexLink" href="#">
+                <div class='img' style='background-image: url(https://images.unsplash.com/photo-1423145369430-a9ea0de096cd?crop=entropy&amp;fit=crop&amp;fm=jpg&amp;h=1375&amp;ixjsv=2.1.0&amp;ixlib=rb-0.3.5&amp;q=80&amp;w=1725);'></div>
+                <h1 id="demo1">This is a title</h1>
+                <p id="demo2">Some sample text about the article this hexagon leads to</p>
+              </a>
+            </div>
+          </li>
+          
+         <li class="hex">
+            <div class="hexIn">
+              <a class="hexLink" href="#">
+                <div class='img' style='background-image:url(https://images.unsplash.com/photo-1417436026361-a033044d901f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;w=1080&amp;fit=max&amp;s=faa4e192f33e0d6b7ce0e54f15140e42);'></div>
+                <h1 id="demo1">This is a title</h1>
+                <p id="demo2">Some sample text about the article this hexagon leads to</p>
+              </a>
+            </div>
+          </li>
+            <li class="hex">
+            <div class="hexIn">
+              <a class="hexLink" href="#">
+                <div class='img' style='background-image: url(https://images.unsplash.com/photo-1425668273332-3a46ab26b161?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;w=1080&amp;fit=max&amp;s=d453ab3dec298c43415526458b360fa6);'></div>
+                <h1 id="demo1">This is a title</h1>
+                <p id="demo2">Some sample text about the article this hexagon leads to</p>
+              </a>
+            </div>
+          </li>
+              <li class="hex">
+            <div class="hexIn">
+              <a class="hexLink" href="#">
+                    <div class='img' style='background-image: url(https://images.unsplash.com/44/MIbCzcvxQdahamZSNQ26_12082014-IMG_3526.jpg?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;w=1080&amp;fit=max&amp;s=49dab7a5e4b2e28b5707bc2db974c94b);'></div>
+                <h1 id="demo1">This is a title</h1>
+                <p id="demo2">Some sample text about the article this hexagon leads to</p>
+              </a>
+            </div>
+          </li>
+            <li class="hex">
+            <div class="hexIn">
+              <a class="hexLink" href="#">
+                <div class='img' style='background-image: url(https://images.unsplash.com/photo-1432887382605-0abf9cc49e8f?crop=entropy&amp;fit=crop&amp;fm=jpg&amp;h=1375&amp;ixjsv=2.1.0&amp;ixlib=rb-0.3.5&amp;q=80&amp;w=1725);'></div>
+                <h1 id="demo1">This is a title</h1>
+                <p id="demo2">Some sample text about the article this hexagon leads to</p>
+              </a>
+            </div>
+          </li>
+            <li class="hex">
+            <div class="hexIn">
+              <a class="hexLink" href="#">
+                <div class='img' style='background-image: url(https://images.unsplash.com/photo-1417026846249-f31f7e43fc35?crop=entropy&amp;fit=crop&amp;fm=jpg&amp;h=1375&amp;ixjsv=2.1.0&amp;ixlib=rb-0.3.5&amp;q=80&amp;w=1725);'></div>
+                <h1 id="demo1">This is a title</h1>
+                <p id="demo2">Some sample text about the article this hexagon leads to</p>
+              </a>
+            </div>
+          </li>
+        </ul>
+          </div>
+
+    <footer class="sticky-footer">
+        <div class="sticky-bar2" id="sticky-bar">
+            <!-- Your sticky bar content goes here -->
+            <h4>Sponsored by</h4>
+            <!-- Add more img tags for additional logos as needed -->
+        </div>
+        <div class="sticky-bar" id="sticky-bar">
+            <!-- Your sticky bar content goes here -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/2560px-Coca-Cola_logo.svg.png" alt="Coca-Cola Logo">
+            <!-- Add more img tags for additional logos as needed -->
+        </div>
+    </footer>
+
+    <script src="/scripts.js"></script>
+    <script src="/app.js"></script>
+    <script>
+        // JavaScript to show the grid after the splash screen is done
+        window.onload = function () {
+            // Assuming your splash screen animation takes 3 seconds (adjust as needed)
+            setTimeout(function () {
+                document.getElementById('splash-screen').style.display = 'none';
+                document.body.style.overflow = 'auto'; // Restore overflow
+                document.querySelector('.grid').classList.remove('hidden');
+            }, 2000); // Adjust the time based on your splash screen animation duration
+        };
+    </script>
+</body>
+</html>

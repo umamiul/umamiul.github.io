@@ -528,3 +528,26 @@ input:checked ~ div {
     padding: 0.5rem; /* use rem units for consistent scaling */
   }
 }
+
+.socialicons {
+  position: absolute;
+  right: -10px;
+  top: 20px;
+  font-size: 32px;
+  background-color: #D2042D;
+  padding: 10px;
+}
+
+.socialicons i {
+  display: flex;
+  flex-direction: column;
+}
+.socialicons i text {
+  font-family: 'Poppins';
+  font-size: 14px;
+  padding-top: 5px;
+}
+
+.socialicons a {
+  text-decoration: none;
+}
